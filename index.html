@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRIEFING HELL: La Venganza del UX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="crt-overlay"></div>
+    <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+    <div id="ui-layer">
+      <!-- Title Screen -->
+      <div id="screen-start" class="screen active">
+        <div class="logo-box">
+          <div class="terminal-tag">&gt; SYSTEM.CRUNCH_MODE = TRUE</div>
+          <h1 class="glitch-title" data-text="BRIEFING HELL">BRIEFING HELL</h1>
+          <h2 class="subtitle">LA VENGANZA DEL UX</h2>
+        </div>
+        <div class="lore-box">
+          <p><strong>MISIÓN:</strong> Sobrevivir al sprint final.</p>
+          <p class="lore-sub">Repele briefings de clientes tóxicos y azota al Stakeholder Supremo con tu cable USB-C de 100W.</p>
+        </div>
+        <div class="controls-guide">
+          <div><span class="key">A</span> <span class="key">D</span> o <span class="key">◄</span> <span class="key">►</span> : Moverse</div>
+          <div><span class="key">ESPACIO</span> o <span class="key">CLIC</span> : Reflejar Briefing / Látigo USB-C</div>
+          <div><span class="key">W</span> / <span class="key">▲</span> : Saltar</div>
+        </div>
+        <button id="btn-start" class="pixel-btn">START CRUNCH</button>
+      </div>
+
+      <!-- Game Over Screen -->
+      <div id="screen-gameover" class="screen">
+        <div class="modal-card danger">
+          <div class="badge-alert">FATAL BURNOUT</div>
+          <h2>SIN VACACIONES</h2>
+          <p id="gameover-reason">Tu paciencia llegó a cero. Te toca rehacer el diseño desde cero.</p>
+          <div class="stats-preview" id="gameover-stats"></div>
+          <button id="btn-retry" class="pixel-btn">REINTENTAR SPRINT</button>
+        </div>
+      </div>
+
+      <!-- Victory Screen -->
+      <div id="screen-victory" class="screen">
+        <div class="modal-card success">
+          <div class="badge-success">FIGMA APPROVED</div>
+          <h2>¡PROYECTO ENTREGADO!</h2>
+          <p>El Stakeholder Absoluto firmó el entregable. ¡Sin cambios de última hora!</p>
+          <div class="stats-preview" id="victory-stats"></div>
+          <button id="btn-restart" class="pixel-btn">JUGAR DE NUEVO</button>
+        </div>
+      </div>
+
+      <!-- Audio Mute Button -->
+      <button id="btn-audio" class="audio-toggle" title="Alternar Sonido">🔊</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
